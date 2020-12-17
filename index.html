@@ -6,18 +6,22 @@
 	<style type="text/css">
 		* {
 			background-color: black;
-			position: fixed;
-			left: 50%;
+			position: absolute;
 			top: 50%;
-			margin-left: -150px;
-			margin-top: -27px;
+			left: 50%;
+			transform: translate(-52.5%, -64%);
 			outline-width: 0px;
 		}
 	</style>
 </head>
-<body>
-<audio controls>
+<body onload="volume()">
+<audio controls id="podcast">
 	<source src="Final.mp3" type="audio/mpeg">
 </audio>
 </body>
+<script type="text/javascript">
+	function volume() {
+		document.getElementById("podcast").volume = 0.5;
+	}
+</script>
 </html>

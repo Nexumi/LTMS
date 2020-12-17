@@ -6,12 +6,30 @@
 	<style type="text/css">
 		* {
 			background-color: black;
+			outline-width: 0px;
+			user-select: none;
 			position: fixed;
+		}
+
+		#podcast {
 			top: 50%;
 			left: 50%;
 			margin-top: -27px;
 			margin-left: -150px;
-			outline-width: 0px;
+		}
+
+		#m5 {
+			top: 50%;
+			left: 50%;
+			margin-top: -15px;
+			margin-left: -200px;
+		}
+
+		#p5 {
+			top: 50%;
+			left: 50%;
+			margin-top: -15px;
+			margin-left: 170px;
 		}
 	</style>
 </head>
@@ -19,10 +37,24 @@
 	<audio controls id="podcast">
 		<source src="Final.mp3" type="audio/mpeg">
 	</audio>
+	<img src="-5.png" id="m5">
+	<img src="+5.png" id="p5">
 </body>
 <script type="text/javascript">
+	document.getElementById("m5").addEventListener("click", mseek);
+	document.getElementById("p5").addEventListener("click", pseek);
+	var podcast = document.getElementById("podcast")
+
 	function volume() {
-		document.getElementById("podcast").volume = 0.5;
+		podcast.volume = 0.5;
+	}
+
+	function mseek() {
+		podcast.currentTime = podcast.currentTime - 5
+	}
+
+	function pseek() {
+		podcast.currentTime = podcast.currentTime + 5
 	}
 </script>
 </html>

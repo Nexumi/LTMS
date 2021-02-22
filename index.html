@@ -35,7 +35,7 @@
 		}
 	</style>
 </head>
-<body onload="volume()">
+<body>
 	<audio controls id="podcast">
 		<source src="Final.mp3" type="audio/mpeg">
 	</audio>
@@ -46,11 +46,8 @@
 	document.getElementById("m5").addEventListener("click", mseek);
 	document.getElementById("p5").addEventListener("click", pseek);
 	var podcast = document.getElementById("podcast")
-
-	function volume() {
-		podcast.volume = 0.5;
-	}
-
+	podcast.volume = 0.5;
+	
 	function mseek() {
 		podcast.currentTime = podcast.currentTime - 5
 	}
